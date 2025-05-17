@@ -9,4 +9,6 @@ Hello
 Ganesh checking commit
 .display 
   background-color: #fbfbfb; i change color
+  calculator 
+  background-color: #131212; change color in black
   
