@@ -1,74 +1,76 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
-  margin: 0;
-  height: 100vh;
-  background: linear-gradient(135deg, #2c3e50, #3498db);
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  margin: 0;
 }
 
 .calculator {
-  background-color: #1c1c1c;
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  width: 320px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  padding: 20px;
 }
 
-#display {
-  width: 100%;
+.display {
+  background-color: #e9eef3;
+  border-radius: 8px;
   height: 60px;
-  background-color: #000;
-  color: #00ffcc;
-  font-size: 2rem;
-  text-align: right;
-  padding: 0 15px;
-  border: none;
-  border-radius: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 24px;
   margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+  gap: 10px;
 }
 
 button {
   padding: 20px;
-  font-size: 1.2rem;
+  font-size: 18px;
   border: none;
-  border-radius: 12px;
-  background-color: #2e2e2e;
-  color: #fff;
+  border-radius: 8px;
+  background-color: #dbeafe;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px #1a1a1a;
+  transition: background-color 0.2s;
 }
 
 button:hover {
-  background-color: #444;
-  transform: scale(1.05);
+  background-color: #bfdbfe;
 }
 
-button:active {
-  transform: scale(0.95);
-  box-shadow: none;
+.operator {
+  background-color: #93c5fd;
 }
 
-button.zero {
-  grid-column: span 2;
+.operator:hover {
+  background-color: #60a5fa;
 }
 
-button:nth-child(4n) {
-  background-color: #ff9500;
+.equal {
+  background-color: #34d399;
+  color: white;
 }
 
-button:nth-child(4n):hover {
-  background-color: #ffa733;
+.equal:hover {
+  background-color: #10b981;
+}
+
+.clear {
+  background-color: #f87171;
+  color: white;
+}
+
+.clear:hover {
+  background-color: #ef4444;
 }
