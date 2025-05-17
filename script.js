@@ -1,4 +1,5 @@
 const display = document.getElementById("display");
+const history = document.getElementById("history");
 
 function appendValue(value) {
   if (display.innerText === "0" || display.innerText === "Error") {
@@ -10,6 +11,7 @@ function appendValue(value) {
 
 function clearDisplay() {
   display.innerText = "0";
+  history.innerText = "";
 }
 
 function backspace() {
@@ -23,13 +25,16 @@ function backspace() {
 
 function calculate() {
   try {
-    display.innerText = eval(display.innerText);
+    const expression = display.innerText;
+    const result = eval(expression);
+    history.innerText = expression + " =";
+    display.innerText = result;
   } catch {
     display.innerText = "Error";
   }
 }
 
-// Listen for keyboard input
+// Keyboard support
 document.addEventListener("keydown", (event) => {
   const key = event.key;
 
@@ -38,6 +43,7 @@ document.addEventListener("keydown", (event) => {
   } else if (["+", "-", "*", "/", "%"].includes(key)) {
     appendValue(key);
   } else if (key === "Enter" || key === "=") {
+    event.preventDefault();
     calculate();
   } else if (key === "Backspace") {
     backspace();
