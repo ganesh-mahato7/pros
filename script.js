@@ -28,3 +28,20 @@ function calculate() {
     display.innerText = "Error";
   }
 }
+
+// Listen for keyboard input
+document.addEventListener("keydown", (event) => {
+  const key = event.key;
+
+  if (!isNaN(key) || key === ".") {
+    appendValue(key);
+  } else if (["+", "-", "*", "/", "%"].includes(key)) {
+    appendValue(key);
+  } else if (key === "Enter" || key === "=") {
+    calculate();
+  } else if (key === "Backspace") {
+    backspace();
+  } else if (key.toLowerCase() === "c") {
+    clearDisplay();
+  }
+});
